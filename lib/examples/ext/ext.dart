@@ -11,8 +11,14 @@ class ExtPage extends StatefulWidget {
 }
 
 class _ExtPageState extends State<ExtPage> {
+  double _x = 0;
+  double _y = 0;
+
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      Overlay.of(context)?.insert(_entry());
+    });
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -31,5 +37,30 @@ class _ExtPageState extends State<ExtPage> {
         ],
       ),
     );
+  }
+
+  OverlayEntry _entry() {
+    return OverlayEntry(builder: (ctx) {
+      return Positioned(
+        width: 48,
+        height: 48,
+        left: _x,
+        top: _y,
+        child: GestureDetector(
+          onPanUpdate: (d) {
+            setState(() {
+              _x += d.delta.dx;
+              _y += d.delta.dy;
+            });
+          },
+          child: FloatingActionButton(
+            child: Icon(Icons.add_rounded),
+            onPressed: () {
+              print('yes');
+            },
+          ),
+        ),
+      );
+    });
   }
 }
