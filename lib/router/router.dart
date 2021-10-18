@@ -5,7 +5,7 @@ export 'routes.dart';
 export 'namespace.dart';
 
 class RouterX {
-  static const initRoute = RoutesNamespace.Home;
+  static const initRoute = RoutesNamespace.Video;
 
   static final routes = r.routes;
 }

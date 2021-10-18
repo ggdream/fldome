@@ -1,9 +1,11 @@
 import 'dart:io';
 
+import 'package:dart_vlc/dart_vlc.dart';
 import 'package:fldome/app/app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  DartVLC.initialize();
   HttpOverrides.global = MyHttpOverrides();
   runApp(const App());
 }
