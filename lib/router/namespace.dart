@@ -4,4 +4,5 @@ class RoutesNamespace {
   static const Home = '/';
   static const Chat = '/chat';
   static const Video = '/video';
+  static const Draw = '/draw';
 }

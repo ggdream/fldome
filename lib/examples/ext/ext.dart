@@ -28,9 +28,16 @@ class _ExtPageState extends State<ExtPage> {
       body: ListView(
         children: [
           ListTile(
-            title: Text('chat'),
+            title: Text('聊天'),
             onTap: () {
               Get.toNamed(RoutesNamespace.Chat);
+            },
+            trailing: Icon(Icons.arrow_forward_ios_rounded),
+          ),
+          ListTile(
+            title: Text('画板'),
+            onTap: () {
+              Get.toNamed(RoutesNamespace.Draw);
             },
             trailing: Icon(Icons.arrow_forward_ios_rounded),
           ),

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:fldome/examples/chat/chat.dart';
+import 'package:fldome/examples/draw/draw.dart';
 import 'package:fldome/examples/ext/ext.dart';
 import 'package:fldome/examples/video/video.dart';
 import 'package:get/get.dart';
@@ -19,5 +20,9 @@ final List<GetPage> routes = [
   GetPage(
     name: RoutesNamespace.Video,
     page: () => VideoPage(),
+  ),
+  GetPage(
+    name: RoutesNamespace.Draw,
+    page: () => DrawPage(),
   ),
 ];
